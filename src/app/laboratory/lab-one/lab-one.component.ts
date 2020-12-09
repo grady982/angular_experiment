@@ -1,4 +1,4 @@
-import { AfterViewChecked, Component, OnInit, ChangeDetectorRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as marked from 'marked';
 import * as hljs from 'highlight.js';
 import * as prism from 'prismjs';
@@ -8,7 +8,7 @@ import * as prism from 'prismjs';
   templateUrl: './lab-one.component.html',
   styleUrls: ['./lab-one.component.scss']
 })
-export class LabOneComponent implements OnInit, AfterViewInit {
+export class LabOneComponent implements OnInit {
 
   md = `
 ## Test Title
@@ -22,6 +22,10 @@ I just love **bold text**.
 \> - test sub content
 \> content
 
+## TEST IMAGE
+![Tux, the Linux mascot](/assets/img/lofibg.jpg)
+
+## TEST CodeBlock
 \`\`\`js
 var gulp = require('gulp');
 var myth = require('gulp-myth');
@@ -32,14 +36,9 @@ gulp.task('default', function () {
         .pipe(gulp.dest('dist'));
 });
 \`\`\`
-
-
-## TEST IMAGE
-![Tux, the Linux mascot](/assets/img/lofibg.jpg)
   `;
 
   code = `
-\`\`\`js
 var gulp = require('gulp');
 var myth = require('gulp-myth');
 
@@ -48,7 +47,6 @@ gulp.task('default', function () {
         .pipe(myth())
         .pipe(gulp.dest('dist'));
 });
-\`\`\`
   `;
 
   mdHTML: string;
@@ -60,22 +58,18 @@ gulp.task('default', function () {
     this.parseMD();
   }
 
-  ngAfterViewInit() {
-    // setTimeout(() => {
-    //   this.parseMD();
-    // });
-  }
-
   parseMD() {
     // 解析 markdown syntax
     // reference => https://marked.js.org/using_advanced#options
     // reference 請看 Basic Usage => https://prismjs.com/#examples 
+    // https://prismjs.com/
+    // If you use that pattern, the <pre> will automatically get the language-xxxx class 
+    // (if it doesn’t already have it) and will be styled as a code block.
     marked.setOptions({
       renderer: new marked.Renderer(),
       highlight: function(code, language) {
         // const validLanguage = hljs.getLanguage(language) ? language : 'plaintext';
         // return hljs.highlight(validLanguage, code).value;
-        console.log([code, language]);
         return prism.highlight(code, prism.languages[language], language);
       },
       pedantic: false,
@@ -87,8 +81,8 @@ gulp.task('default', function () {
       xhtml: false
     });
     this.mdHTML = marked(this.md);
-    console.log('==== parse md string ====');
-    console.log(this.mdHTML);
+    // 在某些時機點 class language-js 會掉，目前還沒找到優雅的做法...先這樣
+    this.mdHTML = this.mdHTML.replace('<pre>', '<pre class="language-js">');
   }
 
 }
