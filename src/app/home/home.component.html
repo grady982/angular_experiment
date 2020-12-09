@@ -1,0 +1,45 @@
+<section class="container-fluid bg-light">
+    <div class="container d-flex flex-column justify-content-center align-items-start" style="height: 300px;">
+        <p style="font-size: 1.5rem;">
+            What you learn easily, you forget easily too.
+        </p>
+        <p style="font-size: 1.5rem;">
+            If you watch and struggle on you own you will master the technique better.
+        </p>
+        <button type="button" class="btn btn-info mt-5" [routerLink]="['/laboratory']">Get Started</button>
+    </div>
+</section>
+
+<section class="container h-50 mt-5">
+    <h1 class="mb-0">Project Description</h1>
+    <mat-list>
+        <h3 matSubheader>General</h3>
+        <mat-list-item role="listitem">
+            <mat-icon mat-list-icon>extension</mat-icon>
+            <span>Angular Material</span>
+            <code class="ml-2">ng add @angular/material</code>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+            <mat-icon mat-list-icon>format_paint</mat-icon>
+            <span>Bootstrap</span>
+            <code class="ml-2">npm i bootstrap</code>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <h3 matSubheader>Markdown</h3>
+        <mat-list-item role="listitem">
+            <mat-icon mat-list-icon>settings</mat-icon>
+            <span>marked</span>
+            <code class="ml-2">npm i marked</code>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+            <mat-icon mat-list-icon>settings</mat-icon>
+            <span>highlight</span>
+            <code class="ml-2">npm i highlight.js</code>
+        </mat-list-item>
+        <mat-list-item role="listitem">
+            <mat-icon mat-list-icon>settings</mat-icon>
+            <span>prism</span>
+            <code class="ml-2">npm i prismjs</code>
+        </mat-list-item>
+    </mat-list>
+</section>
