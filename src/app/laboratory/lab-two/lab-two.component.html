@@ -1,1 +1,10 @@
-<p>lab-two works!</p>
+<div class="d-flex flex-column">
+    <h3>Chosed the document you want to print.</h3>
+    <mat-checkbox [(ngModel)]="contentA" [ngModelOptions]="{standalone: true}" (change)="cbxChange('a')">CONTENT A</mat-checkbox>
+    <mat-checkbox [(ngModel)]="contentB" [ngModelOptions]="{standalone: true}" (change)="cbxChange('b')">CONTENT B</mat-checkbox>
+    <mat-checkbox [(ngModel)]="contentC" [ngModelOptions]="{standalone: true}" (change)="cbxChange('c')">CONTENT C</mat-checkbox>
+</div>
+
+<button type="button" class="btn btn-info" (click)="printDoc()">
+    Print
+</button>
