@@ -1,19 +1,17 @@
-<mat-toolbar color="primary">
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <h1 class="d-flex align-items-center" style="cursor: pointer;" [routerLink]="['/']">
-    Angular Experiment
-    <span class="material-icons">science</span>
-  </h1>
-</mat-toolbar>
+<div>
+  <!-- 這個 div 是為了讓這個區塊的 display 為defaut 在 print 模式時被隱藏 -->
+  <mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="d-flex align-items-center" style="cursor: pointer;" [routerLink]="['/']">
+      Angular Experiment
+      <span class="material-icons">science</span>
+    </h1>
+  </mat-toolbar>
+</div>
 <router-outlet></router-outlet>
-
-<!-- <app-markdown [markdownString]="'# What the fuck!'"></app-markdown>
-<app-markdown [markdownString]="'# What the fuck!'"></app-markdown>
-<app-markdown [markdownString]="'# What the fuck!'"></app-markdown>
-<app-markdown [markdownString]="'# What the fuck!'"></app-markdown>
-<app-markdown [markdownString]="'# What the fuck!'"></app-markdown> -->
+<router-outlet name="print"></router-outlet>
 
 <footer class="mt-auto" style="height: 100px; background-color: #3f51b5;">
 </footer>

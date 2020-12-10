@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-laboratory',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LaboratoryComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  printDoc() {
+    this.router.navigate(['/laboratory' ,{ outlets: { print: ['print', 'lab2'] }}]).then(() => {
+      window.print();
+      this.router.navigate(['/laboratory']);
+    });
   }
 
 }
