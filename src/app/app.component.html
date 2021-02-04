@@ -1,17 +1,17 @@
-<div>
-  <!-- 這個 div 是為了讓這個區塊的 display 為defaut 在 print 模式時被隱藏 -->
-  <mat-toolbar color="primary">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <h1 class="d-flex align-items-center" style="cursor: pointer;" [routerLink]="['/']">
-      Angular Experiment
-      <span class="material-icons">science</span>
-    </h1>
-  </mat-toolbar>
-</div>
-<router-outlet></router-outlet>
-<router-outlet name="print"></router-outlet>
+<!-- 這個 div 是為了讓這個區塊的 display 為defaut 在 print 模式時被隱藏 -->
+<mat-toolbar class="mat-elevation-z6" color="primary" fxLayout="row" fxLayoutAlign="none center">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <h2 style="cursor: pointer;" [routerLink]="['/']">Angular Experiment</h2>
+  <span class="material-icons">science</span>
+</mat-toolbar>
 
-<footer class="mt-auto" style="height: 100px; background-color: #3f51b5;">
-</footer>
+<section fxFill fxLayout="column">
+  <router-outlet></router-outlet>
+  <router-outlet name="print"></router-outlet>
+  <footer fxLayout="row" fxLayoutAlign="center center" style="height: 100px; background-color: #3f51b5; margin-top: auto;">
+    <h4 style="color: white;" >©2020-2021 GradyLiu</h4>
+  </footer>
+</section>
+

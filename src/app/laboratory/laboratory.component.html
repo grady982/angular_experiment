@@ -1,7 +1,67 @@
-<section class="container mt-4" style="min-height: 90%;">
-  <div class="d-flex mb-5">
-    <button type="button" class="btn btn-info mr-2" [routerLink]="['/laboratory','lab1']">Markdown Component</button>
-    <button type="button" class="btn btn-info" [routerLink]="['/laboratory','lab2']">Print Document</button>
+<section>
+  <!-- <div style="margin-top: 20px;" fxLayout="row" fxLayoutAlign="space-around center">
+    <button mat-raised-button color="primary" [routerLink]="['/laboratory','lab1']">Markdown Component</button>
+    <button mat-raised-button color="primary" [routerLink]="['/laboratory','lab2']">Print Document</button>
+    <button mat-raised-button color="primary" [routerLink]="['/laboratory', 'lab3']">File Uploading</button>
+    <button mat-raised-button color="primary">Loading Component</button>
+    <button mat-raised-button color="primary">ngFor TrackBy</button>
+    <button mat-raised-button color="primary" [routerLink]="['/laboratory', 'lab4']">注音符號數位化顯示計畫</button>
+  </div> -->
+
+  <!-- <div style="margin-top: 30px" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+    <mat-card fxFlex="20%">
+      <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+        <span fxFlex="80%"></span>
+        <mat-icon fxFlex="10%">mode_edit</mat-icon>
+        <mat-icon fxFlex="10%">delete</mat-icon>
+      </mat-card-title>
+      Markdown Component
+    </mat-card>
+    <mat-card fxFlex="40%">Print Document</mat-card>
+    <mat-card fxFlex="40%">File Uploading</mat-card>
+    <mat-card fxFlex="40%">Loading Component</mat-card>
+    <mat-card fxFlex="40%">ngFor TrackBy</mat-card>
+    <mat-card fxFlex="40%">注音符號數位化顯示計畫</mat-card>
+  </div>
+  <div style="margin-top: 30px" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+    <mat-card fxFlex="20%">Markdown Component</mat-card>
+    <mat-card fxFlex="20%">Print Document</mat-card>
+    <mat-card fxFlex="20%">File Uploading</mat-card>
+    <mat-card fxFlex="20%">Loading Component</mat-card>
+    <mat-card fxFlex="40%">ngFor TrackBy</mat-card>
+    <mat-card fxFlex="40%">注音符號數位化顯示計畫</mat-card>
+  </div> -->
+
+  <!-- <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="0.5%" fxLayoutAlign="center">
+    <div fxFlex="20%">
+      <img mat-card-image class="img" src="https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/8V46UZCS0V.jpg">
+    </div>
+    <div fxFlex="20%">
+      <img mat-card-image class="img" src="https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/LTLE4QGRVQ.jpg">
+    </div>
+    <div fxFlex="20%">
+      <img mat-card-image class="img" src="https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/R926LU1YEA.jpg">
+    </div>
+    <div fxFlex="20%">
+      <img mat-card-image class="img" src="https://d2lm6fxwu08ot6.cloudfront.net/img-thumbs/960w/U9PP3KXXY2.jpg">
+    </div>
+  </div> -->
+
+  <!-- <mat-form-field class="search-form">
+    <input matInput placeholder="Search Picture" type="text">
+  </mat-form-field>
+  <button button="submit" mat-raised-button color="primary">Search</button>
+  <br> -->
+  
+  <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="0.5%" fxLayoutAlign="center" style="margin-top: 20px;">
+    <mat-card class="card-picture" fxFlex="20%" *ngFor="let picture of pictures">
+      <mat-card-title fxLayout.gt-xs="row" fxLayout.xs="column">
+        <span fxFlex="80%">{{picture.title}}</span>
+        <mat-icon fxFlex="10%">mode_edit</mat-icon>
+        <mat-icon fxFlex="10%">delete</mat-icon>
+      </mat-card-title>
+      <img mat-card-image [src]="picture.img">
+    </mat-card>
   </div>
   <router-outlet></router-outlet>
 </section>

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { LabFourComponent } from './lab-four/lab-four.component';
 import { LabOneComponent } from './lab-one/lab-one.component';
+import { LabThreeComponent } from './lab-three/lab-three.component';
 import { ContentAComponent } from './lab-two/content-a/content-a.component';
 import { ContentBComponent } from './lab-two/content-b/content-b.component';
 import { ContentCComponent } from './lab-two/content-c/content-c.component';
@@ -14,7 +16,9 @@ const routes: Routes = [
     path: '', component: LaboratoryComponent,
     children: [
       { path: 'lab1', component: LabOneComponent },
-      { path: 'lab2', component: LabTwoComponent }
+      { path: 'lab2', component: LabTwoComponent },
+      { path: 'lab3', component: LabThreeComponent },
+      { path: 'lab4', component: LabFourComponent }
     ]
   },
   {
