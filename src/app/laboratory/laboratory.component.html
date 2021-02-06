@@ -1,13 +1,4 @@
 <section>
-  <!-- <div fxLayout="row" fxLayoutAlign="space-around center">
-    <button mat-raised-button color="primary" [routerLink]="['/laboratory','lab1']">Markdown Component</button>
-    <button mat-raised-button color="primary" [routerLink]="['/laboratory','lab2']">Print Document</button>
-    <button mat-raised-button color="primary" [routerLink]="['/laboratory', 'lab3']">File Uploading</button>
-    <button mat-raised-button color="primary">Loading Component</button>
-    <button mat-raised-button color="primary">ngFor TrackBy</button>
-    <button mat-raised-button color="primary" [routerLink]="['/laboratory', 'lab4']">注音符號數位化顯示計畫</button>
-  </div> -->
-
   <div style="margin-top: 20px;" fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="15px" fxLayoutAlign="center">
     <mat-card fxFlex="30%">
       <mat-card-title>Markdown Component</mat-card-title>
@@ -17,9 +8,10 @@
         </p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button>VIST</button>
+        <button mat-button [routerLink]="['/laboratory','lab1']">VIST</button>
       </mat-card-actions>
     </mat-card>
+
     <mat-card fxFlex="30%">
       <mat-card-title>Print Document</mat-card-title>
       <mat-card-content>
@@ -28,9 +20,10 @@
         </p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button>VIST</button>
+        <button mat-button [routerLink]="['/laboratory','lab2']">VIST</button>
       </mat-card-actions>
     </mat-card>
+
     <mat-card fxFlex="30%">
       <mat-card-title>File Uploading</mat-card-title>
       <mat-card-content>
@@ -42,6 +35,7 @@
         <button mat-button>VIST</button>
       </mat-card-actions>
     </mat-card>
+
     <mat-card fxFlex="30%">
       <mat-card-title>Loading Component</mat-card-title>
       <mat-card-content>
@@ -50,9 +44,11 @@
         </p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button>VIST</button>
+        <button mat-button [routerLink]="['/laboratory', 'lab3']">VIST</button>
       </mat-card-actions>
     </mat-card>
+    
+
     <mat-card fxFlex="30%">
       <mat-card-title>ngFor TrackBy</mat-card-title>
       <mat-card-content>
@@ -64,6 +60,7 @@
         <button mat-button>VIST</button>
       </mat-card-actions>
     </mat-card>
+    
     <mat-card fxFlex="30%">
       <mat-card-title>注音符號數位化顯示計畫</mat-card-title>
       <mat-card-content>
@@ -72,11 +69,10 @@
         </p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button>VIST</button>
+        <button mat-button [routerLink]="['/laboratory', 'lab4']">VIST</button>
       </mat-card-actions>
     </mat-card>
   </div>
-
-
-  <router-outlet></router-outlet>
 </section>
+
+<router-outlet></router-outlet>

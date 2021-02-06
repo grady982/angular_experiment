@@ -13,14 +13,13 @@ import { LaboratoryComponent } from './laboratory.component';
 
 const routes: Routes = [
   {
-    path: '', component: LaboratoryComponent,
-    children: [
-      { path: 'lab1', component: LabOneComponent },
-      { path: 'lab2', component: LabTwoComponent },
-      { path: 'lab3', component: LabThreeComponent },
-      { path: 'lab4', component: LabFourComponent }
-    ]
+    path: '', redirectTo: 'lab-list' , component: LaboratoryComponent
   },
+  { path: 'lab-list', component: LaboratoryComponent },
+  { path: 'lab1', component: LabOneComponent },
+  { path: 'lab2', component: LabTwoComponent },
+  { path: 'lab3', component: LabThreeComponent },
+  { path: 'lab4', component: LabFourComponent },
   {
     path: 'print',
     outlet: 'print',
