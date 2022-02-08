@@ -1,4 +1,4 @@
-![test](/src/assets/img/test.svg "test")
+<!-- ![test](/src/assets/img/test.svg "test") -->
 
 # AngularExperiment
 
